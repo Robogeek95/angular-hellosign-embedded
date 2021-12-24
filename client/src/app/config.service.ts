@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
@@ -10,7 +11,7 @@ type User = {
 
 @Injectable({ providedIn: 'root' })
 export class ConfigService {
-  baseURL: string = 'http://localhost:3000/';
+  baseURL: string = environment.apiBaseUrl;
 
   constructor(private http: HttpClient) {}
 
