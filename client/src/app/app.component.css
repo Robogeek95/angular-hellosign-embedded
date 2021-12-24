@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+  }
+  .container {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+  }
+  .text-sm {
+    font-size: 80%;
+    margin-top: 5px;
+  }
+  .border-danger {
+    border-color: red;
+  }
+  .text-danger {
+    color: red;
+  }
+  input {
+    width: 100%;
+    padding: 5px 12px;
+  }
+  .flex {
+    display: flex;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .justify-end {
+    justify-content: flex-end;
+  }
+  .input-group {
+    margin-bottom: 10px;
+  }
+  .form-container {
+    max-width: 500px;
+    margin: auto;
+  }
+  

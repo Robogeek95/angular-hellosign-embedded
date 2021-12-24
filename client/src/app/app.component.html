@@ -1,0 +1,79 @@
+<div>
+  <p>Complete NDA form to gain access</p>
+  <hr />
+
+  <form [formGroup]="ndaForm" (ngSubmit)="onSubmit()" class="form-container">
+    <div class="input-group">
+      <input
+        [class.border-danger]="
+          ndaForm.get('name')?.touched && ndaForm.get('name')?.invalid
+        "
+        type="text"
+        formControlName="name"
+        placeholder="name"
+      />
+      <div
+        *ngIf="
+          ndaForm.get('name')?.touched &&
+          ndaForm.get('name')?.hasError('required')
+        "
+        class="text-sm text-danger"
+      >
+        Name is required
+      </div>
+    </div>
+
+    <div class="input-group">
+      <input
+        [class.border-danger]="
+          ndaForm.get('email')?.touched && ndaForm.get('email')?.invalid
+        "
+        type="email"
+        formControlName="email"
+        placeholder="email"
+      />
+      <div
+        *ngIf="
+          ndaForm.get('email')?.touched &&
+          ndaForm.get('email')?.hasError('required')
+        "
+        class="text-sm text-danger"
+      >
+        Email is required
+      </div>
+      <div
+        *ngIf="
+          ndaForm.get('email')?.touched &&
+          ndaForm.get('email')?.hasError('email')
+        "
+        class="text-sm text-danger"
+      >
+        Email is not valid
+      </div>
+    </div>
+
+    <div class="input-group">
+      <input
+        [class.border-danger]="
+          ndaForm.get('phone')?.touched && ndaForm.get('phone')?.invalid
+        "
+        type="phone"
+        formControlName="phone"
+        placeholder="phone"
+      />
+      <div
+        *ngIf="
+          ndaForm.get('phone')?.touched &&
+          ndaForm.get('phone')?.hasError('required')
+        "
+        class="text-sm text-danger"
+      >
+        phone is required
+      </div>
+    </div>
+
+    <div class="input-group">
+      <input type="submit" value="Sign now" [disabled]="ndaForm.invalid" />
+    </div>
+  </form>
+</div>
